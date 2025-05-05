@@ -7,9 +7,6 @@
         private List<Account> Accounts;
         private List<Transaction> Transactions;
 
-        private HashSet<string> set;
-        private Dictionary<string, bool> dictionary;
-
         public Bank(string Name)
         {
             if (string.IsNullOrWhiteSpace(Name))
@@ -62,9 +59,24 @@
                 throw new InvalidOperationException("IBAN is already registered in the system");
             }
 
-            // aggiungi
             this.Accounts.Add(account);
-            this.set.Add(account.IBAN);
+        }
+
+        public override string ToString()
+        {
+            string result = $"Bank: {this.Name}\n";
+
+            for (int i = 0; i < this.Accounts.Count; i++)
+            {
+                result += $"Accounts[{i}]: {this.Accounts[i]}\n";
+            }
+
+            for (int i = 0; i < this.Transactions.Count; i++)
+            {
+                result += $"Transactions[{i}]: {this.Transactions[i]}\n";
+            }
+
+            return result;
         }
     }
 }

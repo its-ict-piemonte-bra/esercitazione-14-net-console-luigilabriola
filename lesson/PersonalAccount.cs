@@ -48,5 +48,10 @@
                     this.FirstName.Equals(account.FirstName) &&
                     this.LastName.Equals(account.LastName);
         }
+
+        public override string ToString()
+        {
+            return $"{base.ToString()} - Type: Personal";
+        }
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace lesson
+﻿using System.Security.Cryptography.X509Certificates;
+
+namespace lesson
 {
     /// <summary>
     /// Represents an account in a Bank.
@@ -107,6 +109,11 @@
 
             Account account = (Account)obj;
             return this.IBAN.Equals(account.IBAN);
+        }
+
+        public override string ToString()
+        {
+            return $"Account name: {this.AccountName}";
         }
     }
 }

@@ -24,5 +24,10 @@
                 return this.CompanyName;
             }
         }
+
+        public override string ToString()
+        {
+            return $"{base.ToString()} - Type: Company";
+        }
     }
 }
